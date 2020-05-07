@@ -4,13 +4,7 @@ const bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({extended: true}));
 
-
-
-
-
 app.get ("/", (req, res) => res.sendFile(__dirname + "/index.html"));
-
-
 
 app.post ("/", (req, res) => {
     
@@ -23,7 +17,7 @@ app.post ("/", (req, res) => {
     res.send("Your BMI is" + result);
 })
 
-
+app.get ("/switch", (req, res) => res.sendFile(__dirname + "/switch.html"));
 
 app.listen(3000, () => console.log('running on port 3000'))
 
