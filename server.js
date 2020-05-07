@@ -14,13 +14,13 @@ app.get ("/", (req, res) => res.sendFile(__dirname + "/index.html"));
 
 app.post ("/", (req, res) => {
     
-    let num1 = Number(req.body.num1);
-    let num2 = Number(req.body.num2);
+    let weight = Number(req.body.num1);
+    let height = Number(req.body.num2);
 
-    let result = num1 + num2 ;
+    let result = Math.floor((weight / (height * height)));
 
-    console.log(req.body.num1);
-    res.send("addition is " + result);
+    console.log(result);
+    res.send("Your BMI is" + result);
 })
 
 
